@@ -1,12 +1,10 @@
-import { Link } from "react-router-dom"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 export default function AboutPage() {
   return <>
+    <Header />
     <h1>A propos</h1>
-    <nav>
-      <Link to="/">lien vers page d'acceil</Link>
-      <br />
-      <Link to="/AccommodationSheet">lien vers "Fiche logement"</Link>
-    </nav>
+    <Footer />
   </>
 }
