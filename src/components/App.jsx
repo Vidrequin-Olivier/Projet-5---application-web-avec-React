@@ -1,6 +1,6 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom"
 import HomePage from "../pages/HomePage"
-import AccommodationSheet from "../pages/AccommodationSheet"
+import Accommodation from "../pages/Accommodation"
 import AboutPage from "../pages/AboutPage"
 import Error404 from "../pages/Error404"
 
@@ -11,8 +11,8 @@ export default function App() {
       element: <HomePage />
     },
     {
-      path: "/AccommodationSheet",
-      element: <AccommodationSheet />
+      path: `/Accommodation/:id`,
+      element: <Accommodation />
     },
     {
       path: "/AboutPage",
