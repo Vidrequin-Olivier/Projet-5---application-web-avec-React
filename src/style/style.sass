@@ -1,3 +1,6 @@
+:root
+  --main-text-color: #FF6060
+
 *
   margin: 0
   padding: 0
@@ -48,6 +51,8 @@ header
 main
   width: 100%
   padding: 0 clamp(20px, 5vw, 100px)
+  @media (min-width: 768px)
+    padding: 0 clamp(20px, 7vw, 100px)
 
   .banner
     width: 100%
@@ -120,6 +125,39 @@ main
 
     a
       text-decoration: none
+
+main.accommodation
+  .accommodationPhoto
+    width: 100%
+    height: clamp(255px, 30vw, 415px)
+    margin-bottom: clamp(15px, 5vw, 30px)
+    border-radius: clamp(10px, 2vw, 25px)
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .slideArrow
+      margin: 23px
+
+      svg
+        width: clamp(11.67px, 5vw, 46.68px)
+
+    .slidePosition
+      margin: 25px
+      align-self: end
+      color: white
+
+  h1
+    font-weight: 500
+    font-size: clamp(18px, 5vw, 35px)
+    line-height: clamp(25.67px, 5vw, 51.34px)
+    color: var(--main-text-color)
+
+  .houseLocation
+    margin-bottom: clamp(10px, 2.5vw, 20px)
+    font-weight: 500
+    font-size: clamp(14px, 3vw, 18px)
+    line-height: clamp(20px, 5vw, 25.67px)
 
 footer
   width: 100%
