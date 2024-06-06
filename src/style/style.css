@@ -176,11 +176,53 @@ main.accommodation h1 {
   line-height: clamp(25.67px, 5vw, 51.34px);
   color: var(--main-text-color);
 }
+main.accommodation h1 .smallScreen {
+  display: block;
+}
+@media (min-width: 768px) {
+  main.accommodation h1 .smallScreen {
+    display: none;
+  }
+}
+main.accommodation h1 .largeScreen {
+  display: none;
+}
+@media (min-width: 768px) {
+  main.accommodation h1 .largeScreen {
+    display: block;
+  }
+}
 main.accommodation .houseLocation {
   margin-bottom: clamp(10px, 2.5vw, 20px);
   font-weight: 500;
   font-size: clamp(14px, 3vw, 18px);
   line-height: clamp(20px, 5vw, 25.67px);
+}
+main.accommodation .houseTags {
+  display: flex;
+  flex-wrap: wrap;
+}
+main.accommodation .houseTag {
+  min-width: 84px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: clamp(18px, 2.5vw, 25px);
+  margin: 0 10px 10px 0;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: clamp(10px, 2vw, 14px);
+  line-height: clamp(14px, 2.5vw, 20px);
+  background-color: var(--main-text-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  main.accommodation .houseTag {
+    min-width: 115px;
+  }
 }
 
 footer {

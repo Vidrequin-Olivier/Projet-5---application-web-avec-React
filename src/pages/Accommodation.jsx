@@ -44,11 +44,16 @@ export default function Accommodation() {
             </div>
           </Link>
         </div>
-        <h1>{house.title}</h1>
-        <p className="houseLocation">{house.location}</p>
-        <div className="houseTags">
-          <HouseTags house={house} />
-        </div>
+        <section className="accommodationDetails">
+          <h1>
+            <span class="smallScreen">{house.description}</span>
+            <span class="largeScreen">{house.title}</span>
+          </h1>
+          <p className="houseLocation">{house.location}</p>
+          <div className="houseTags">
+            <HouseTags house={house} />
+          </div>
+        </section>
       </main>
       <Footer />
   </>

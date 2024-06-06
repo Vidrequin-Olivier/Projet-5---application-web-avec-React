@@ -1,3 +1,11 @@
+// memo pour gérer les vw avec clamp(): 
+//   7vw:  375px => 26.25px; 1440 => 100.8px
+//   5vw:  375px => 18.75px; 1440 => 72px
+//   4vw:  375px => 15px;    1440 => 57.6px
+//   3vw:  375px => 11.25px; 1440 => 43.2px
+// 2.5vw:  375px => 9.37px;  1440 => 36px
+//   2vw:  375px => 7.5px;   1440 => 28.8px
+
 :root
   --main-text-color: #FF6060
 
@@ -153,11 +161,43 @@ main.accommodation
     line-height: clamp(25.67px, 5vw, 51.34px)
     color: var(--main-text-color)
 
+    .smallScreen
+      display: block
+      @media (min-width: 768px)
+        display: none
+
+    .largeScreen
+      display: none
+      @media (min-width: 768px)
+        display: block
+
   .houseLocation
     margin-bottom: clamp(10px, 2.5vw, 20px)
     font-weight: 500
     font-size: clamp(14px, 3vw, 18px)
     line-height: clamp(20px, 5vw, 25.67px)
+
+  .houseTags
+    display: flex
+    flex-wrap: wrap
+
+  .houseTag
+    min-width: 84px
+    width: fit-content
+    height: clamp(18px, 2.5vw, 25px)
+    margin: 0 10px 10px 0
+    padding: 0 20px
+    border-radius: 10px
+    font-weight: 700
+    font-size: clamp(10px, 2vw, 14px)
+    line-height: clamp(14px, 2.5vw, 20px)
+    background-color: var(--main-text-color)
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    @media (min-width: 768px)
+      min-width: 115px
 
 footer
   width: 100%
