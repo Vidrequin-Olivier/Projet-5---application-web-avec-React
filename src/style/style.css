@@ -170,39 +170,45 @@ main.accommodation .accommodationPhoto .slidePosition {
   align-self: end;
   color: white;
 }
-main.accommodation h1 {
+@media (min-width: 768px) {
+  main.accommodation .accommodationDetails {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+main.accommodation .accommodationDetails .houseInfos h1 {
   font-weight: 500;
   font-size: clamp(18px, 5vw, 35px);
   line-height: clamp(25.67px, 5vw, 51.34px);
   color: var(--main-text-color);
 }
-main.accommodation h1 .smallScreen {
+main.accommodation .accommodationDetails .houseInfos h1 .smallScreen {
   display: block;
 }
 @media (min-width: 768px) {
-  main.accommodation h1 .smallScreen {
+  main.accommodation .accommodationDetails .houseInfos h1 .smallScreen {
     display: none;
   }
 }
-main.accommodation h1 .largeScreen {
+main.accommodation .accommodationDetails .houseInfos h1 .largeScreen {
   display: none;
 }
 @media (min-width: 768px) {
-  main.accommodation h1 .largeScreen {
+  main.accommodation .accommodationDetails .houseInfos h1 .largeScreen {
     display: block;
   }
 }
-main.accommodation .houseLocation {
+main.accommodation .accommodationDetails .houseInfos .houseLocation {
   margin-bottom: clamp(10px, 2.5vw, 20px);
   font-weight: 500;
   font-size: clamp(14px, 3vw, 18px);
   line-height: clamp(20px, 5vw, 25.67px);
 }
-main.accommodation .houseTags {
+main.accommodation .accommodationDetails .houseInfos .houseTags {
   display: flex;
   flex-wrap: wrap;
 }
-main.accommodation .houseTag {
+main.accommodation .accommodationDetails .houseInfos .houseTag {
   min-width: 84px;
   width: -moz-fit-content;
   width: fit-content;
@@ -220,9 +226,42 @@ main.accommodation .houseTag {
   align-items: center;
 }
 @media (min-width: 768px) {
-  main.accommodation .houseTag {
+  main.accommodation .accommodationDetails .houseInfos .houseTag {
     min-width: 115px;
   }
+}
+main.accommodation .accommodationDetails .hostContainer {
+  margin-bottom: clamp(13.5px, 2vw, 21px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  main.accommodation .accommodationDetails .hostContainer {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+main.accommodation .accommodationDetails .hostContainer .ratingStar {
+  font-size: clamp(16px, 2.5vw, 29px);
+}
+main.accommodation .accommodationDetails .hostContainer .host {
+  display: flex;
+  align-items: center;
+}
+main.accommodation .accommodationDetails .hostContainer .host p {
+  width: -moz-min-content;
+  width: min-content;
+  text-align: right;
+  font-size: clamp(12px, 2vw, 18px);
+  line-height: clamp(17px, 2.5vw, 25px);
+}
+main.accommodation .accommodationDetails .hostContainer .host img {
+  width: clamp(32px, 5vw, 64px);
+  height: clamp(32px, 5vw, 64px);
+  margin-left: 10px;
+  border-radius: 50%;
 }
 
 footer {

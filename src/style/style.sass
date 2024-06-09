@@ -155,49 +155,84 @@ main.accommodation
       align-self: end
       color: white
 
-  h1
-    font-weight: 500
-    font-size: clamp(18px, 5vw, 35px)
-    line-height: clamp(25.67px, 5vw, 51.34px)
-    color: var(--main-text-color)
-
-    .smallScreen
-      display: block
-      @media (min-width: 768px)
-        display: none
-
-    .largeScreen
-      display: none
-      @media (min-width: 768px)
-        display: block
-
-  .houseLocation
-    margin-bottom: clamp(10px, 2.5vw, 20px)
-    font-weight: 500
-    font-size: clamp(14px, 3vw, 18px)
-    line-height: clamp(20px, 5vw, 25.67px)
-
-  .houseTags
-    display: flex
-    flex-wrap: wrap
-
-  .houseTag
-    min-width: 84px
-    width: fit-content
-    height: clamp(18px, 2.5vw, 25px)
-    margin: 0 10px 10px 0
-    padding: 0 20px
-    border-radius: 10px
-    font-weight: 700
-    font-size: clamp(10px, 2vw, 14px)
-    line-height: clamp(14px, 2.5vw, 20px)
-    background-color: var(--main-text-color)
-    color: white
-    display: flex
-    justify-content: center
-    align-items: center
+  .accommodationDetails
     @media (min-width: 768px)
-      min-width: 115px
+      display: flex
+      justify-content: space-between
+
+    .houseInfos
+      h1
+        font-weight: 500
+        font-size: clamp(18px, 5vw, 35px)
+        line-height: clamp(25.67px, 5vw, 51.34px)
+        color: var(--main-text-color)
+
+        .smallScreen
+          display: block
+          @media (min-width: 768px)
+            display: none
+
+        .largeScreen
+          display: none
+          @media (min-width: 768px)
+            display: block
+
+      .houseLocation
+        margin-bottom: clamp(10px, 2.5vw, 20px)
+        font-weight: 500
+        font-size: clamp(14px, 3vw, 18px)
+        line-height: clamp(20px, 5vw, 25.67px)
+
+      .houseTags
+        display: flex
+        flex-wrap: wrap
+
+      .houseTag
+        min-width: 84px
+        width: fit-content
+        height: clamp(18px, 2.5vw, 25px)
+        margin: 0 10px 10px 0
+        padding: 0 20px
+        border-radius: 10px
+        font-weight: 700
+        font-size: clamp(10px, 2vw, 14px)
+        line-height: clamp(14px, 2.5vw, 20px)
+        background-color: var(--main-text-color)
+        color: white
+        display: flex
+        justify-content: center
+        align-items: center
+        @media (min-width: 768px)
+          min-width: 115px
+
+    .hostContainer
+      margin-bottom: clamp(13.5px, 2vw, 21px)
+      display: flex
+      justify-content: space-between
+      align-items: center
+      @media (min-width: 768px)
+        flex-direction: column-reverse
+        justify-content: center
+        align-items: flex-end
+
+      .ratingStar
+        font-size: clamp(16px, 2.5vw, 29px)
+
+      .host
+        display: flex
+        align-items: center
+
+        p
+          width: min-content
+          text-align: right
+          font-size: clamp(12px, 2vw, 18px)
+          line-height: clamp(17px, 2.5vw, 25px)
+
+        img
+          width: clamp(32px, 5vw, 64px)
+          height: clamp(32px, 5vw, 64px)
+          margin-left: 10px
+          border-radius: 50%
 
 footer
   width: 100%
