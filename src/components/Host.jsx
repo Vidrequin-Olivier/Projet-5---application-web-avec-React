@@ -1,7 +1,7 @@
 import Rating from "./Rating"
 
 export default function Host({ house }) {
-  return <div className="hostContainer">
+  return <div className="hostInfos">
     <Rating rating={house.rating} />
     <div className="host">
       <p>{house.host.name}</p>

@@ -1,13 +1,7 @@
-// memo pour gérer les vw avec clamp(): 
-//   7vw:  375px => 26.25px; 1440 => 100.8px
-//   5vw:  375px => 18.75px; 1440 => 72px
-//   4vw:  375px => 15px;    1440 => 57.6px
-//   3vw:  375px => 11.25px; 1440 => 43.2px
-// 2.5vw:  375px => 9.37px;  1440 => 36px
-//   2vw:  375px => 7.5px;   1440 => 28.8px
-
 :root
-  --main-text-color: #FF6060
+  --main-color: #FF6060
+  --secondary-color: #E3E3E3
+  --secondary-text-color: #FFFFFF
 
 *
   margin: 0
@@ -103,7 +97,7 @@ main
       font-weight: 700
       font-size: clamp(24px, 5vw, 48px)
       line-height: clamp(24px, 5vw, 68.45px)
-      color: white
+      color: var(--secondary-text-color)
 
   .gallery
     width: 100%
@@ -128,7 +122,7 @@ main
         font-size: 18px
         line-height: 25.67px
         font-weight: 700
-        color: white
+        color: var(--secondary-text-color)
         align-self: flex-end
 
     a
@@ -153,7 +147,7 @@ main.accommodation
     .slidePosition
       margin: 25px
       align-self: end
-      color: white
+      color: var(--secondary-text-color)
 
   .accommodationDetails
     @media (min-width: 768px)
@@ -165,17 +159,7 @@ main.accommodation
         font-weight: 500
         font-size: clamp(18px, 5vw, 35px)
         line-height: clamp(25.67px, 5vw, 51.34px)
-        color: var(--main-text-color)
-
-        .smallScreen
-          display: block
-          @media (min-width: 768px)
-            display: none
-
-        .largeScreen
-          display: none
-          @media (min-width: 768px)
-            display: block
+        color: var(--main-color)
 
       .houseLocation
         margin-bottom: clamp(10px, 2.5vw, 20px)
@@ -197,16 +181,16 @@ main.accommodation
         font-weight: 700
         font-size: clamp(10px, 2vw, 14px)
         line-height: clamp(14px, 2.5vw, 20px)
-        background-color: var(--main-text-color)
-        color: white
+        background-color: var(--main-color)
+        color: var(--secondary-text-color)
         display: flex
         justify-content: center
         align-items: center
         @media (min-width: 768px)
           min-width: 115px
 
-    .hostContainer
-      margin-bottom: clamp(13.5px, 2vw, 21px)
+    .hostInfos
+      margin-bottom: clamp(13px, 2.5vw, 31px)
       display: flex
       justify-content: space-between
       align-items: center
@@ -216,11 +200,13 @@ main.accommodation
         align-items: flex-end
 
       .ratingStar
-        font-size: clamp(16px, 2.5vw, 29px)
+        width: clamp(13px, 2vw, 24px)
 
       .host
         display: flex
         align-items: center
+        @media (min-width: 768px)
+          margin-bottom: 21px
 
         p
           width: min-content
@@ -234,12 +220,67 @@ main.accommodation
           margin-left: 10px
           border-radius: 50%
 
+  .houseDetails
+    width: 100%
+    margin-bottom: clamp(27px, 4.5vw, 50px)
+    @media (min-width: 768px)
+      display: flex
+      justify-content: space-between
+
+    .dropdownBar
+      margin-bottom: 20px
+      @media (min-width: 768px)
+        width: 47%
+        margin-bottom: 0
+
+    button
+      width: 100%
+      padding: 10px
+      font-weight: 700
+      font-size: clamp(13px, 1.75vw, 18px)
+      line-height: clamp(10px, 2.5vw, 32px)
+      border-radius: clamp(5px, 0.8vw, 10px)
+      text-align: left
+      color: var(--secondary-text-color)
+      background-color: var(--main-color)
+      display: flex
+      justify-content: space-between
+      align-items: center
+      @media (min-width: 768px)
+        padding-right: 20px
+
+      svg
+        width: clamp(26px, 3.5vw, 34px)
+        padding: 5px
+        transition: transform 0.3s ease
+
+      .expanded
+        transform: rotate(-180deg)
+
+    .dropdown
+      max-height: 0
+      overflow: hidden
+      margin-top: -5px
+      padding: 0 20px
+      font-size: clamp(12px, 3vw, 18px)
+      line-height: clamp(17px, 5vw, 25px)
+      background-color: #F6F6F673
+      border-radius: 0 0 5px 5px
+      position: relative
+      z-index: -1
+      transition: max-height 0.3s ease
+      transition: padding 0.3s ease
+
+    .dropdown.expanded
+      max-height: 5000px
+      padding: 25px 20px 20px 20px
+
 footer
   width: 100%
   height: 209px
   padding: 66px 0 58px
   background-color: black
-  color: white
+  color: var(--secondary-text-color)
   display: flex
   flex-direction: column
   justify-content: space-between
@@ -247,9 +288,13 @@ footer
   @media (min-width: 768px)
     padding: 66px 0 29px
 
+  svg
+    width: 122px
+    height: 40px
+
   p
     width: 30%
     text-align: center
-    font-size: clamp(12px, 3vw, 24px)
+    font-size: clamp(12px, 2vw, 24px)
     @media (min-width: 768px)
       width: 100%

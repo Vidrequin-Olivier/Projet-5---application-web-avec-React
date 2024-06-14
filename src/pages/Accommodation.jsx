@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import Error404 from "./Error404"
 import Header from "../components/Header"
+import { HouseProvider } from "../contexts/HouseContext"
 import Housing from "../components/Housing"
 import AccommodationPhoto from "../components/AccommodationPhoto"
 import HouseInfos from "../components/HouseInfos"
@@ -25,17 +26,19 @@ export default function Accommodation() {
   return <>
       <Header />
       <main className="accommodation">
-        <AccommodationPhoto
-          house={house} previousHouseId={previousHouseId} houseIndex={houseIndex}
-          housingLength={housingLength} nextHouseId={nextHouseId}
-        />
-        <section className="accommodationDetailsContainer">
-          <div className="accommodationDetails">
-            <HouseInfos house={house} />
-            <Host house={house} />
-          </div>
-          <HouseDetails />
-        </section>
+        <HouseProvider house={house}>
+          <AccommodationPhoto
+            house={house} previousHouseId={previousHouseId} houseIndex={houseIndex}
+            housingLength={housingLength} nextHouseId={nextHouseId}
+          />
+          <section className="accommodationDetailsContainer">
+            <div className="accommodationDetails">
+              <HouseInfos house={house} />
+              <Host house={house} />
+            </div>
+            <HouseDetails />
+          </section>
+        </HouseProvider>
       </main>
       <Footer />
   </>
