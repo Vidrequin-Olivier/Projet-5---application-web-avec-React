@@ -8,7 +8,7 @@ import Footer from "../components/Footer"
 export default function HomePage() {
   return <>
       <Header />
-      <main>
+      <main className="homePage">
         <Banner backgroundImage= {bannerImg} >
           <BannerP />
         </Banner>

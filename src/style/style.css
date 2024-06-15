@@ -81,14 +81,6 @@ main .banner {
   position: relative;
   margin-bottom: clamp(22px, 5vw, 43px);
 }
-@media (min-width: 768px) {
-  main .banner {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
-}
-main .banner .dark {
-  opacity: 0.6;
-}
 main .dark {
   position: absolute;
   top: 0;
@@ -150,6 +142,63 @@ main .gallery figure.card figcaption {
 }
 main .gallery a {
   text-decoration: none;
+}
+main .dropdownBar {
+  margin-bottom: 25px;
+}
+main .dropdownBar button {
+  width: 100%;
+  padding: 10px;
+  font-weight: 700;
+  font-size: clamp(13px, 1.75vw, 18px);
+  line-height: clamp(10px, 2.5vw, 32px);
+  border-radius: clamp(5px, 0.8vw, 10px);
+  text-align: left;
+  color: var(--secondary-text-color);
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  main .dropdownBar button {
+    padding-right: 20px;
+  }
+}
+main .dropdownBar button svg {
+  width: clamp(26px, 3.5vw, 34px);
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+main .dropdownBar button .expanded {
+  transform: rotate(-180deg);
+}
+main .dropdownBar .dropdown {
+  max-height: 0;
+  overflow: hidden;
+  margin-top: -5px;
+  padding: 0 20px;
+  font-size: clamp(12px, 3vw, 18px);
+  line-height: clamp(17px, 5vw, 25px);
+  background-color: rgba(246, 246, 246, 0.4509803922);
+  border-radius: 0 0 5px 5px;
+  position: relative;
+  z-index: -1;
+  transition: max-height 0.3s ease;
+  transition: padding 0.3s ease;
+}
+main .dropdownBar .dropdown.expanded {
+  max-height: 5000px;
+  padding: 25px 20px 20px 20px;
+}
+
+@media (min-width: 768px) {
+  main.homePage .banner {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+main.homePage .banner .dark {
+  opacity: 0.6;
 }
 
 main.accommodation .accommodationPhoto {
@@ -264,59 +313,62 @@ main.accommodation .houseDetails {
     justify-content: space-between;
   }
 }
-main.accommodation .houseDetails .dropdownBar {
-  margin-bottom: 20px;
-}
 @media (min-width: 768px) {
-  main.accommodation .houseDetails .dropdownBar {
+  main.accommodation .dropdownBar {
     width: 47%;
     margin-bottom: 0;
   }
 }
-main.accommodation .houseDetails button {
-  width: 100%;
-  padding: 10px;
-  font-weight: 700;
-  font-size: clamp(13px, 1.75vw, 18px);
-  line-height: clamp(10px, 2.5vw, 32px);
-  border-radius: clamp(5px, 0.8vw, 10px);
-  text-align: left;
-  color: var(--secondary-text-color);
-  background-color: var(--main-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 @media (min-width: 768px) {
-  main.accommodation .houseDetails button {
-    padding-right: 20px;
+  main.aboutPage {
+    margin-bottom: 10px;
   }
 }
-main.accommodation .houseDetails button svg {
-  width: clamp(26px, 3.5vw, 34px);
-  padding: 5px;
-  transition: transform 0.3s ease;
+@media (min-width: 768px) {
+  main.aboutPage .banner {
+    box-shadow: none;
+  }
 }
-main.accommodation .houseDetails button .expanded {
-  transform: rotate(-180deg);
+main.aboutPage .dark {
+  opacity: 0.3;
 }
-main.accommodation .houseDetails .dropdown {
-  max-height: 0;
-  overflow: hidden;
-  margin-top: -5px;
-  padding: 0 20px;
-  font-size: clamp(12px, 3vw, 18px);
-  line-height: clamp(17px, 5vw, 25px);
-  background-color: rgba(246, 246, 246, 0.4509803922);
-  border-radius: 0 0 5px 5px;
-  position: relative;
-  z-index: -1;
-  transition: max-height 0.3s ease;
-  transition: padding 0.3s ease;
+main.aboutPage .dropdownBarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-main.accommodation .houseDetails .dropdown.expanded {
-  max-height: 5000px;
-  padding: 25px 20px 20px 20px;
+main.aboutPage .dropdownBarContainer .dropdownBar {
+  width: clamp(200px, 100%, 1023px);
+  margin-bottom: clamp(25px, 2.5vw, 33px);
+}
+
+main.error404 {
+  padding: 0 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main.error404 svg {
+  width: clamp(198px, 50vw, 597px);
+  margin: clamp(113px, 13vw, 139px);
+}
+main.error404 .errorText {
+  margin-bottom: clamp(113px, 13vw, 139px);
+  text-align: center;
+  color: var(--main-color);
+  font-weight: 500;
+  font-size: clamp(18px, 3vw, 36px);
+  line-height: clamp(25.67px, 4vw, 51.34px);
+}
+main.error404 a {
+  margin-bottom: clamp(113px, 13vw, 139px);
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  color: black;
+  font-weight: 500;
+  font-size: clamp(14px, 2vw, 20px);
+  line-height: clamp(18px, 2.5vw, 25px);
 }
 
 footer {
