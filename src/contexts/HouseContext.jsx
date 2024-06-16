@@ -2,8 +2,6 @@ import { createContext, useContext } from 'react'
 
 const HouseContext = createContext()
 
-// y a il une fonction par défaut dans ce fichier ?
-
 export function useHouse() {
   return useContext(HouseContext)
 }
