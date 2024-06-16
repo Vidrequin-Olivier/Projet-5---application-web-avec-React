@@ -12,7 +12,6 @@ import Footer from "../components/Footer"
 export default function Accommodation() {
   const { id } = useParams()
   const houses = Housing()
-  const housingLength = Housing().length
   const house = houses.find(el => el.id === id)
   const houseIndex = houses.findIndex(el => el.id === id)
 
@@ -20,17 +19,11 @@ export default function Accommodation() {
     return <Error404 />
   }
 
-  const previousHouseId = houses[(houseIndex - 1 + houses.length) % houses.length].id;
-  const nextHouseId = houses[(houseIndex + 1) % houses.length].id;
-
   return <>
       <Header />
       <main className="accommodation">
         <HouseProvider house={house}>
-          <AccommodationPhoto
-            house={house} previousHouseId={previousHouseId} houseIndex={houseIndex}
-            housingLength={housingLength} nextHouseId={nextHouseId}
-          />
+          <AccommodationPhoto house={house} />
           <section className="accommodationDetailsContainer">
             <div className="accommodationDetails">
               <HouseInfos house={house} />

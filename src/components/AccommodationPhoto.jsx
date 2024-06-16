@@ -11,7 +11,7 @@ function handlePictureChanges({ direction, setPictureIndex, pictures }) {
   return {setPictureIndex}
 }
 
-export default function AccommodationPhoto({ house, houseIndex, housingLength }) {
+export default function AccommodationPhoto({ house }) {
   const [pictureIndex, setPictureIndex] = useState(0)
   const pictures = house.pictures
   const picture = pictures[pictureIndex]
@@ -19,7 +19,7 @@ export default function AccommodationPhoto({ house, houseIndex, housingLength })
 
   return (
     <div className="accommodationPhoto" style={{ backgroundImage: `url(${picture})` }}>
-      {housingLength > 1 && (
+      {pictures.length > 1 && (
         <>
           <div className="slideArrow">
             <svg
