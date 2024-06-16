@@ -1,7 +1,9 @@
-export default function SlidePosition( {houseIndex, housingLength} ) {
+export default function SlidePosition({ house, pictureIndex }) {
+  const picturesLength = house.pictures.length
+
   return (
     <div className="slidePosition">
-      <p>{houseIndex + 1}/{housingLength}</p>
+      <p>{pictureIndex + 1}/{picturesLength}</p>
     </div>
   )
 }
