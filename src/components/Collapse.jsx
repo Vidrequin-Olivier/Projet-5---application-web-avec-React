@@ -1,7 +1,7 @@
 import { useState } from "react"
 import handleHouseDetails from "./handleHouseDetails"
 
-export default function DropdownBar({ button, contents }) {
+export default function Collapse({ button, contents }) {
   const [expanded, setExpanded] = useState(false)
 
   const handleClick = () => {
@@ -9,7 +9,7 @@ export default function DropdownBar({ button, contents }) {
   }
 
   return (
-    <div className="dropdownBar">
+    <div className="collapse">
       <button>
         {button}
         <svg

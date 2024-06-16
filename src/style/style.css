@@ -143,10 +143,10 @@ main .gallery figure.card figcaption {
 main .gallery a {
   text-decoration: none;
 }
-main .dropdownBar {
+main .collapse {
   margin-bottom: 25px;
 }
-main .dropdownBar button {
+main .collapse button {
   width: 100%;
   padding: 10px;
   font-weight: 700;
@@ -161,19 +161,19 @@ main .dropdownBar button {
   align-items: center;
 }
 @media (min-width: 768px) {
-  main .dropdownBar button {
+  main .collapse button {
     padding-right: 20px;
   }
 }
-main .dropdownBar button svg {
+main .collapse button svg {
   width: clamp(26px, 3.5vw, 34px);
   padding: 5px;
   transition: transform 0.3s ease;
 }
-main .dropdownBar button .expanded {
+main .collapse button .expanded {
   transform: rotate(-180deg);
 }
-main .dropdownBar .dropdown {
+main .collapse .dropdown {
   max-height: 0;
   overflow: hidden;
   margin-top: -5px;
@@ -187,7 +187,7 @@ main .dropdownBar .dropdown {
   transition: max-height 0.3s ease;
   transition: padding 0.3s ease;
 }
-main .dropdownBar .dropdown.expanded {
+main .collapse .dropdown.expanded {
   max-height: 5000px;
   padding: 25px 20px 20px 20px;
 }
@@ -314,7 +314,7 @@ main.accommodation .houseDetails {
   }
 }
 @media (min-width: 768px) {
-  main.accommodation .dropdownBar {
+  main.accommodation .collapse {
     width: 47%;
     margin-bottom: 0;
   }
@@ -333,12 +333,12 @@ main.accommodation .houseDetails {
 main.aboutPage .dark {
   opacity: 0.3;
 }
-main.aboutPage .dropdownBarContainer {
+main.aboutPage .collapseContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main.aboutPage .dropdownBarContainer .dropdownBar {
+main.aboutPage .collapseContainer .collapse {
   width: clamp(200px, 100%, 1023px);
   margin-bottom: clamp(25px, 2.5vw, 33px);
 }

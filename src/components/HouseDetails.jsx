@@ -1,6 +1,6 @@
 import { useHouse } from "../contexts/HouseContext"
 import EquipmentsList from "./EquipmentsList"
-import DropdownBar from "./DropdownBar"
+import Collapse from "./Collapse"
 
 export default function HouseDetails() {
   const house = useHouse()
@@ -8,8 +8,8 @@ export default function HouseDetails() {
 
   return (
     <div className="houseDetails">
-      <DropdownBar button="Description" contents={house.description} />
-      <DropdownBar button="Equipements" contents={equipmentsList} />
+      <Collapse button="Description" contents={house.description} />
+      <Collapse button="Equipements" contents={equipmentsList} />
     </div>
   )
 }

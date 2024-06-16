@@ -1,7 +1,7 @@
 import Header from "../components/Header"
 import Banner from "../components/Banner"
 import AboutPageBanner from "../images/AboutPageBanner.png"
-import DropdownBar from "../components/DropdownBar"
+import Collapse from "../components/Collapse"
 import Footer from "../components/Footer"
 
 export default function AboutPage() {
@@ -14,11 +14,11 @@ const securite = "La sécurité est la priorité de Kasa. Aussi bien pour nos h�
     <Header />
     <main className="aboutPage">
       <Banner backgroundImage={AboutPageBanner}/>
-      <div className="dropdownBarContainer">
-        <DropdownBar button="Fiabilité" contents={fiabilite} />
-        <DropdownBar button="Respect" contents={respect} />
-        <DropdownBar button="Service" contents={service} />
-        <DropdownBar button="Sécurité" contents={securite} />
+      <div className="collapseContainer">
+        <Collapse button="Fiabilité" contents={fiabilite} />
+        <Collapse button="Respect" contents={respect} />
+        <Collapse button="Service" contents={service} />
+        <Collapse button="Sécurité" contents={securite} />
       </div>
     </main>
     <Footer />
