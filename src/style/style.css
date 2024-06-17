@@ -209,6 +209,7 @@ main.accommodation .accommodationPhoto {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-size: cover;
 }
 main.accommodation .accommodationPhoto .slideArrow {
   margin: 23px;

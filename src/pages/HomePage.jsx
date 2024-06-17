@@ -7,13 +7,13 @@ import Footer from "../components/Footer"
 
 export default function HomePage() {
   return <>
-      <Header />
-      <main className="homePage">
-        <Banner backgroundImage= {bannerImg} >
-          <BannerP />
-        </Banner>
-        <Gallery />
-      </main>
-      <Footer />
+    <Header />
+    <main className="homePage">
+      <Banner backgroundImage= {bannerImg} >
+        <BannerP />
+      </Banner>
+      <Gallery />
+    </main>
+    <Footer />
   </>
 }
